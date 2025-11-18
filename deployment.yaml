@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-major
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mlops-major
+  template:
+    metadata:
+      labels:
+        app: mlops-major
+    spec:
+      containers:
+      - name: mlops-major
+        image: shivani76/mlops_major
+        ports:
+        - containerPort: 5000
